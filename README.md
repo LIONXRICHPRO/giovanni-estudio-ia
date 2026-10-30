@@ -5,7 +5,7 @@ Aplicación independiente para completar durante la videollamada la guía del Dr
 ## Infraestructura propia
 
 - Repositorio: https://github.com/LIONXRICHPRO/giovanni-estudio-ia
-- Sitio: https://lionxrichpro.github.io/giovanni-estudio-ia/
+- Sitio de producción: https://giovanni-estudio-ia.vercel.app/
 - Proyecto Supabase: **Giovanni Estudio IA**, referencia `yyzbfpjpsmvggkgnmwob`.
 - Organización: `usandresleonus@gmail.com`, cuenta NODOTO 2.
 - Base Postgres propia en `us-east-1`. No depende de otra aplicación.
@@ -22,7 +22,9 @@ npm run build
 npm start
 ```
 
-Abrir http://localhost:4174. `npm run build` prepara `docs/` con `.nojekyll`. GitHub Pages publica la carpeta `/docs` de `main`; cada actualización de esa carpeta dispara un nuevo despliegue. Los imports y recursos son relativos para funcionar bajo la ruta del repositorio.
+Abrir http://localhost:4174. `npm run build` prepara `docs/`. Vercel publica esa salida con la configuración de `vercel.json` y framework Other. Los imports y recursos son relativos para funcionar en la raíz del dominio o en una subruta.
+
+La versión de producción se publicó mediante Vercel MCP en el equipo `lion's projects`, proyecto `giovanni-estudio-ia`. La vinculación automática del repositorio `LIONXRICHPRO/giovanni-estudio-ia` fue rechazada por Vercel con `repo_no_access`; por eso las actualizaciones deben publicarse por MCP hasta conceder a la integración de Vercel acceso al repositorio. No hay despliegue automático desde GitHub configurado para este proyecto.
 
 ## Acceso y guardado
 
