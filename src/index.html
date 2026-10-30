@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#E7DBCB"><meta name="robots" content="noindex,nofollow">
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Guía de trabajo de NODOTO para la primera reunión con el Dr. Giovanni Soto: su voz, su criterio y la base de su contenido con IA.">
@@ -14,7 +14,7 @@
 <body>
   <a class="skip" href="#workspace">Ir al contenido</a>
   <main id="auth-screen" class="auth-screen">
-    <div class="auth-copy"><a class="brand" href="https://nodoto.com" target="_blank" rel="noopener noreferrer"><span>NODOTO<sup>©</sup></span><img src="assets/logo-oliva.svg" alt="" width="27" height="27"></a><p class="eyebrow">UN ESPACIO PARA SU CONOCIMIENTO</p><h1>Su criterio.<span>Su contenido.<br>A su ritmo.</span></h1><p>Doctor Giovanni, este es su espacio para compartir referencias, completar su guía y proponer los temas que le gustaría que produzcamos.</p><div class="auth-note"><strong>Usted propone. Nosotros lo hacemos.</strong><span>Sus respuestas y propuestas estarán disponibles cuando vuelva a entrar.</span></div></div>
+    <div class="auth-copy"><a class="brand" href="https://nodoto.com" target="_blank" rel="noopener noreferrer"><span>NODOTO<sup>©</sup></span><img src="assets/logo-oliva.svg" alt="" width="27" height="27"></a><div class="auth-intro"><p class="eyebrow">UN ESPACIO PARA SU CONOCIMIENTO</p><h1>Su criterio.<span>Su contenido.<br>A su ritmo.</span></h1><p>Doctor Giovanni, este es su espacio para compartir referencias, completar su guía y proponer los temas que le gustaría que produzcamos.</p><div class="auth-note"><strong>Usted propone. Nosotros lo hacemos.</strong><span>Sus respuestas y propuestas estarán disponibles cuando vuelva a entrar.</span></div></div></div>
     <div class="auth-card"><span class="eyebrow">ACCESO PERSONAL</span><h2>Bienvenido,<br>Doctor Giovanni.</h2><p>Ingrese para continuar con su preparación.</p><form id="login-form"><div class="field"><label for="login-username">Usuario</label><input id="login-username" name="username" type="text" value="Doctor Giovanni" autocomplete="username" required maxlength="80"></div><div class="field"><label for="login-password">Contraseña</label><div class="password-input"><input id="login-password" name="password" type="password" autocomplete="current-password" required maxlength="128"><button id="toggle-password" type="button" aria-label="Mostrar contraseña">Mostrar</button></div></div><p id="login-error" class="login-error" role="alert" hidden></p><button id="login-button" class="button" type="submit">Entrar a mi espacio <span class="icon-arrow" aria-hidden="true"></span></button></form><p class="auth-help">Si necesita ayuda con su acceso, comuníquese con Andrés León.</p></div>
   </main>
   <div id="application" hidden>
@@ -24,6 +24,7 @@
     <div class="client"><span class="avatar">GS</span><div><strong>Dr. Giovanni Soto</strong><span>Urología · Fase 1</span></div></div>
     <div class="guide-label"><span>SU ESPACIO DE TRABAJO</span><span>01—08</span></div>
     <nav id="navigation" aria-label="Secciones"></nav>
+    <div class="mobile-navigation"><label for="mobile-section">Sección de la guía</label><select id="mobile-section" aria-label="Ir a una sección"></select><p id="mobile-progress" aria-live="polite">Paso 1 de 8 · 0 % completado</p></div>
     <div class="side-bottom"><div class="progress-label"><span>Su preparación</span><strong id="progress-text">0 %</strong></div><div class="progress-track"><span id="progress-fill"></span></div><p id="progress-caption">Los pendientes se resuelven juntos.</p><a class="pdf-link" href="assets/guia-fase-1.pdf" download>Descargar la guía en PDF <span class="icon-arrow" aria-hidden="true"></span></a><div class="signature">NODOTO AGENCY<span>Andrés León · Fundador</span></div></div>
   </aside>
   <div class="shell">

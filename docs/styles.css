@@ -18,3 +18,83 @@
 @media(min-width:901px) and (max-height:850px){.sidebar{padding:22px 20px;overflow-y:auto}.client{padding:15px 0;margin-top:16px}.guide-label{margin-top:20px}.nav-item{padding:9px 8px}.side-bottom{padding-top:20px}.side-bottom p{margin-bottom:14px}.pdf-link{padding:12px 0}.signature{padding-top:12px}}
 @media(max-width:1000px){.auth-screen{gap:40px;padding:45px}.auth-card{padding:30px}.auth-copy .brand{margin-bottom:45px}.topbar>.eyebrow{max-width:110px}.top-actions{gap:12px}.logout-button{font-size:10px}}
 @media(max-width:650px){.auth-screen{display:block;padding:28px 22px 40px}.auth-copy .brand{margin-bottom:30px;max-width:none}.auth-copy h1{font-size:42px;letter-spacing:-1.7px;margin-bottom:20px}.auth-copy>p:not(.eyebrow){font-size:13px}.auth-copy>.eyebrow{font-size:8px;margin-bottom:20px}.auth-note{margin-top:22px;padding-top:18px}.auth-card{margin-top:32px;max-width:none;padding:27px 23px}.auth-card h2{font-size:32px}.proposal-form{padding:19px}.proposal-form-footer{display:block}.priority-field{max-width:none;margin-bottom:20px}.proposal-form-footer .proposal-actions{flex-wrap:wrap}.proposal-card h3{font-size:19px}.proposal-meta time{margin-left:0}.topbar{min-height:70px;height:auto;padding-top:12px;padding-bottom:12px}.top-actions{flex-wrap:wrap;column-gap:15px;row-gap:9px}.top-actions .save-status{flex:1;min-width:115px}.top-actions .logout-button{margin-left:auto}.proposal-form-footer .button{width:100%}}
+
+.mobile-navigation{display:none}
+.auth-intro>.eyebrow{margin:0 0 28px}
+.auth-intro>p:not(.eyebrow){max-width:480px;font-size:15px;line-height:1.8}
+@media(max-width:900px){
+ .nav-item{min-height:44px;font-size:13px}
+}
+@media(max-width:650px){
+ html{scroll-padding-top:124px;scroll-padding-bottom:24px}
+ .auth-screen{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:100dvh;padding:calc(20px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-left,0px)) calc(28px + env(safe-area-inset-bottom,0px))}
+ .auth-copy{display:contents}
+ .auth-copy>.brand{order:0;width:100%;max-width:none;margin:0}
+ .auth-card{order:1;margin-top:24px;padding:25px 22px;max-width:none}
+ .auth-card h2{font-size:29px;letter-spacing:-.8px;margin-top:20px}
+ .auth-card>p{font-size:14px}
+ .auth-card .field label{font-size:14px}
+ .auth-card .auth-help{font-size:12px;margin-top:22px;padding-top:18px}
+ .auth-intro{order:2;margin-top:32px}
+ .auth-intro>.eyebrow{display:none}
+ .auth-intro h1{font-size:32px;letter-spacing:-1px;margin:0 0 18px}
+ .auth-intro>p:not(.eyebrow){font-size:14px;line-height:1.7}
+ .auth-note strong{font-size:14px}
+ .auth-note span{font-size:13px}
+ .sidebar{padding:18px max(20px,env(safe-area-inset-left,0px)) 14px}
+ .sidebar #navigation{display:none}
+ .mobile-navigation{display:grid;gap:7px;margin-top:20px}
+ .mobile-navigation label{font-size:12px;font-weight:700}
+ .mobile-navigation select{width:100%;max-width:100%;min-width:0;min-height:48px;font-size:16px;background:var(--bone);padding:11px 34px 11px 12px}
+ .mobile-navigation p{font-size:12px;color:var(--muted);line-height:1.5;margin:2px 0 0}
+ .topbar{background:var(--bone);padding:10px max(20px,env(safe-area-inset-left,0px));z-index:5}
+ .top-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;width:100%}
+ .top-actions .save-status{grid-column:1;grid-row:1;font-size:12px;min-width:0;line-height:1.4}
+ .top-actions .logout-button{grid-column:2;grid-row:1;justify-self:stretch;margin:0;text-align:center}
+ .top-actions #save-button{grid-column:1;grid-row:2;min-height:48px;padding:10px 12px;gap:12px;font-size:13px;white-space:normal}
+ .top-actions .share-top{grid-column:2;grid-row:2;min-height:48px;align-content:center;text-align:center;font-size:12px}
+ .text-button{min-height:44px;padding:10px 8px;font-size:13px;line-height:1.4}
+ .password-input button{min-height:44px;min-width:60px;padding:8px;font-size:12px;right:5px}
+ #workspace{padding:26px max(20px,env(safe-area-inset-left,0px)) 30px}
+ .section-eyebrow{flex-wrap:wrap;align-items:flex-start;gap:10px}
+ .section-eyebrow .eyebrow{flex:1 1 100%;font-size:10px;letter-spacing:1.1px}
+ .section-tag{font-size:11px;white-space:normal;max-width:100%;line-height:1.5}
+ .heading,.welcome-grid .heading{font-size:clamp(32px,9.6vw,42px);line-height:1.08;letter-spacing:-1.3px;overflow-wrap:break-word}
+ .lede,.welcome-grid .lede{font-size:15px;line-height:1.7}
+ .field label,.field legend{font-size:14px;line-height:1.55}
+ .hint{font-size:13px;line-height:1.65}
+ input[type=text],input[type=url],input[type=email],input[type=password],textarea,select{font-size:16px;line-height:1.5;min-height:48px;padding:12px 13px;scroll-margin-top:130px}
+ .password-input input{font-size:16px;padding-right:76px}
+ input::placeholder,textarea::placeholder{font-size:14px}
+ textarea{min-height:128px}
+ .button,.button.small{min-height:48px;font-size:14px;line-height:1.4;padding:12px 18px;gap:12px}
+ .auth-card .button{min-height:50px;font-size:14px;padding:12px 15px}
+ .hero-actions{gap:10px}
+ .hero-actions .button{width:100%}
+ .hero-actions .text-button{font-size:13px}
+ .prep-step h3{font-size:15px}
+ .prep-step p,.outcome p,.callout{font-size:14px;line-height:1.7}
+ .subheading{font-size:12px;line-height:1.6;letter-spacing:1px}
+ .radio-option{font-size:15px;line-height:1.6;min-height:48px;gap:12px}
+ .radio-option input,.ready-item input{width:20px;height:20px;flex-shrink:0}
+ .ready-item strong{font-size:15px;line-height:1.5}
+ .ready-item span{font-size:14px;line-height:1.7}
+ .proposal-form{padding:18px 16px}
+ .proposal-form-footer .proposal-actions{gap:10px}
+ .proposal-form-footer .button{min-width:0;white-space:normal}
+ .proposal-card p{font-size:15px;line-height:1.7}
+ .proposal-meta{font-size:12px;line-height:1.5;gap:10px}
+ .proposal-actions .text-button{min-width:64px;text-align:center}
+ .proposal-empty p{font-size:14px}
+ .nav-footer{gap:12px;align-items:center}
+ .nav-footer .button{min-width:0;padding:12px 16px;font-size:14px}
+ .nav-footer>.hint{font-size:12px;max-width:44%;margin:0}
+ .contact{font-size:14px}
+ .contact p{font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+ .toast{bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:14px;padding:15px 18px;line-height:1.6}
+ .login-error,.error-panel{font-size:14px}
+ .page-footer{font-size:9px;line-height:1.6;padding:16px 20px calc(16px + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:650px) and (min-height:600px){.topbar{position:sticky;top:0}}
+@media(max-width:650px) and (max-height:599px){.topbar{position:static}}
+@media print{.mobile-navigation{display:none!important}}

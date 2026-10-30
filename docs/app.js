@@ -54,6 +54,7 @@ async function boot(){
 }
 function updateProgress(){
  const progress=completion(answers);$('#progress-text').textContent=`${progress.percent} %`;$('#progress-fill').style.width=`${progress.percent}%`;
+ $('#mobile-progress').textContent=`Paso ${sections.findIndex(item=>item.id===section)+1} de ${sections.length} · ${progress.percent} % completado`;
  $('#progress-caption').textContent=`${progress.filled} de ${progress.total} campos preparados. Puede dejar pendientes.`;
  document.querySelectorAll('.nav-item').forEach(button=>{const keys=groups[button.dataset.section];button.classList.toggle('done',button.dataset.section==='propuestas'?topics.length>0:Boolean(keys&&completion(answers,keys).filled===keys.length));});
 }
@@ -103,6 +104,8 @@ const renderers={inicio:home,voz:voice,fuentes:sources,audiencia:audience,propue
 function render(){
  const index=sections.findIndex(s=>s.id===section),next=sections[index+1];
  $('#navigation').innerHTML=sections.map(s=>`<button class="nav-item ${section===s.id?'active':''}" data-section="${s.id}" ${section===s.id?'aria-current="step"':''}><span class="num">${s.number}</span><span>${s.name}</span><span class="nav-dot" aria-hidden="true"></span></button>`).join('');
+ $('#mobile-section').innerHTML=sections.map(s=>`<option value="${s.id}" ${section===s.id?'selected':''}>${s.number} · ${s.name}</option>`).join('');
+ if(matchMedia('(min-width:651px) and (max-width:900px)').matches){const nav=$('#navigation'),active=nav.querySelector('.active');nav.scrollLeft=Math.max(0,active.offsetLeft-nav.clientWidth/2+active.offsetWidth/2);}
  $('#content').innerHTML=`<div class="section-content">${conflict?`<div class="error-panel"><p>Esta sesión cambió en otro dispositivo. Exporte esta copia antes de recuperar la versión guardada.</p><button class="button secondary small" data-action="export">Exportar esta copia</button> <button class="button small" data-action="reload">Recuperar versión guardada</button></div>`:''}${renderers[section]()}<div class="nav-footer">${index>0?`<button class="button secondary" data-go="${sections[index-1].id}">← Anterior</button>`:'<span class="hint">A su ritmo. Los pendientes se resuelven juntos.</span>'}${next?`<div class="footer-next"><div><div class="next-label">SIGUIENTE</div><div class="next-name">${next.short}</div></div><button class="button" data-go="${next.id}">Continuar <span>→</span></button></div>`:'<button class="button" data-action="save">Guardar la preparación <span class="icon-arrow" aria-hidden="true"></span></button>'}</div></div>`;
  $('#content').querySelectorAll('[data-field]').forEach(input=>input.disabled=booting);
  $('#content').querySelectorAll('#topic-form input,#topic-form textarea,#topic-form select').forEach(input=>input.disabled=booting||topicBusy);
@@ -128,6 +131,7 @@ document.addEventListener('click',async event=>{
 function onInput(event){const topicInput=event.target.closest('[data-topic-field]');if(topicInput){topicDraft[topicInput.dataset.topicField]=topicInput.value;localDraft();return;}const input=event.target.closest('[data-field]');if(!input)return;answers[input.dataset.field]=input.type==='checkbox'?input.checked:input.value;dirty=true;changeCounter++;localDraft();updateProgress();setStatus(conflict?'Conflicto entre versiones':'Cambios pendientes',conflict?'error':'local');clearTimeout(saveTimer);saveTimer=setTimeout(()=>save(),900);}
 document.addEventListener('input',onInput);
 $('#save-button').addEventListener('click',()=>save(true));
+$('#mobile-section').addEventListener('change',event=>go(event.target.value));
 window.addEventListener('online',()=>{if(dirty&&!conflict)save();});
 window.addEventListener('beforeunload',event=>{if(dirty||topicDraft.title.trim()){event.preventDefault();event.returnValue='';}});
 function exportResponses(){
